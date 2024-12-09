@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .main-login {
+        border: 1px solid black;
+        width: 20rem;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+       }
+       .main-login h3 {
+           text-align: center;
+           margin-bottom: 30px;
+       }
+       .main-login .email-password {
+        display: flex;
+        justify-content: center;
+        border: none;
+        border-bottom: 3px solid black;
+        margin-top: 20px;
+       }
+       .main-login .email {
+         position: relative;
+         top: 10px;
+       }
+
+       .main-login #my-button {
+          margin-top: 40px;
+          width: 10.8rem;
+          height: 2rem;
+          border-radius: 10px;
+          background-color: aliceblue;
+          opacity: 0.9;
+       }
+    </style>
+</head>
+<body>
+    <main>
+    <div class="main-login">
+    <form action="">
+    <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">SIGNUP</h3>
+    <label class="email" id="my-email" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">EMAIL</label>
+    <input class="email-password" type="email" name="email" placeholder="Enter Email Here....." required>
+    <label class="email" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">PASSWORD</label>
+    <input class="email-password" id="my-password" type="password" name="password" placeholder="Enter Password Here....."  required>
+    
+    <input type="button" id="my-button" value="LOGIN">
+   </form>
+</div>
+</main>
+<script>
+    const myEmail = document.getElementById("my-email");
+    const myPassword = document.getElementById("my-password");
+    const myButton = document.getElementById("my-button");  
+    
+    const userName = "rejohn@gmail.com";
+    const userPassword = "hadukin123";
+    myButton.onclick = working;
+
+
+
+    function working() {
+        const email = myEmail.value;
+        const  password = myPassword.value;
+
+         if(email === "" || password === "") {
+            alert("FILL THE BOX");
+         } else if  (email === userName && password === userPassword) {
+            alert("Successfully login now u can proceed to the main page");
+         } else {
+            alert("Invalid password or username");
+         }
+    }
+</script>
+</body>
+</html>

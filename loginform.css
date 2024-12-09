@@ -1,0 +1,109 @@
+
+
+body {
+    background-image: linear-gradient(rgb(0,0,0,0.75), rgba(0,0,0,0.75)),url('rejohn.jpg');
+  
+    background-size: cover;
+}
+
+.login-form {
+    position: relative;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 0 7px black;
+    height: 20rem;
+    width: 20rem;
+    justify-content: center;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    color: white;
+    z-index: 1;
+    transform: translate(-50%, 50%);
+    border-radius: 20px;
+}
+.login-form input {
+display: flex;
+padding: 5px;
+border: none;
+outline: none;
+list-style: none;
+border-bottom: 3px solid rgb(8, 8, 8);
+margin-top: 12px;
+}
+
+.login-form .email-password:focus {
+border-bottom: 3px solid blue;
+transition: 0.2s;
+
+
+}
+.email {
+position: relative;
+top: 10px;
+}
+
+.login-form h3 {
+text-align: center;
+}
+
+.Forgot-Password {
+    position: relative;
+    top: 6px;
+    left: 6rem;
+    color: rgb(24, 202, 246);
+}
+
+.login-form .Sign-up {
+    position: absolute;
+    margin-top: 6.1px;
+    left: 22%;
+    font-size: 15px;
+    text-decoration: none;
+    color: rgb(24, 202, 247);
+    
+}
+
+.login-form .Login-button {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border: 1px solid black;
+    justify-content: center;
+    width: 100%;
+    border-radius: 20px;
+    background-color: blue;
+    opacity: 0.8; 
+    color: white;
+}
+
+.Login-button:hover {
+    background-color: black;
+    transition: 0.5s;
+}
+
+.Login-button:active {
+    color: wheat;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    border: 2px solid white;
+    border-radius: 30px;
+    width: 20rem;
+    text-align: right;
+    
+    
+    
+}
+.header ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: white;
+}
+

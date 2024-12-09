@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<style>
+    body {
+        background-image: linear-gradient(rgb(0,0,0,0.50),rgba(0,0,0,0.50)),url('/images/backgrounds.jfif');
+        background-size: cover;
+      }
+
+
+    .bg-body-tertiary {
+            background-color: rgb(12, 12, 12) !important;
+            opacity: 0.8;
+        }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+    .navbar-login-register {
+            background-color: rgb(0, 68, 255);
+            color: white;
+        }
+
+    .readmore {
+          border: 1px solid black;
+          padding: 7px;
+          border-radius: 30px;
+          color: white;
+          background-color: black;
+          font-size: 14px;
+          text-decoration: none;
+         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .readmore:hover {
+        background-color: rgb(46, 46, 121);
+        transition: 1s;
+    }
+
+    .price {
+        margin-top: 15px;
+        border: 1px solid rgb(185, 177, 177);
+        width: 80px;
+        text-align: start;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .available-items {
+      position: relative;
+      top: 80px;
+      font-size: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+</style>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary p-3">
+        <div class="container-fluid" >
+            <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button >
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.html" style="color: white;" id="home-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="mainContact.html" style="color: white;" id="contact-link">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="CheckCart.html" style="color: white;" id="contact-link">Check Cart</a>
+              </li>
+       <!-- Dire dapit ang Home, Contact -->
+       
+
+              <!-- Dire dapit language-->
+                <li class="nav-item dropdown"> <!-- Dire dapit ang language drop -->
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                    Language
+                  </a>
+                  <ul class="dropdown-menu" style="background: rgb(255, 255, 255); color: black;">
+                    <li><a class="dropdown-item" href="#" onclick="setLanguage('en')" style="color: rgb(0, 0, 0);">English</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="setLanguage('zh')" style="color: rgb(0, 0, 0);">Chinese</a></li>
+                  </ul>
+
+               <!-- Dire dapit ang brandshop-->
+                  <li class="nav-item dropdown">
+                    <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                      Brand Shop
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a type="submit" class="dropdown-item" href="MainEcomers.html">Cars</a></li>
+                      <li><a type="submit" class="dropdown-item" href="mainCellphone.html">Cellphone</a></li>
+                      <li><a class="dropdown-item" href="#">Shirt/Tshirt</a></li>
+                    </ul>     
+                </ul>
+              
+                       
+
+               
+                
+
+               
+            
+          <!-- Dire dapit language-->
+
+        
+        
+          <!-- Dire dapit search button og login og register-->
+            <form class="d-flex" role="search">
+              <button type="submit" formaction="../index.html" class="btn btn-outline-primary ms-1 navbar-login-register">Logout</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+      <div style="height: 100rem;">
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="margin-top: 5rem; margin-bottom: 3rem;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex justify-content-center">
+              <img src="../images/slide1.png" class="d-block w-10" alt="...">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <img src="../images/slide2.png" class="d-block w-10" alt="...">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <img src="../images/slide3.png" class="d-block w-10" alt="...">
+            </div>
+          </div>
+        </div>
+     
+       
+
+        
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+      
+     <!---Availble Items-->
+      <div class="container available-items">
+        <p style="color: white;">Available Items:</p>
+     
+       
+
+  <div class="container my-4">
+   <div class="row row-cols-1 row-cols-md-4 g-4">
+
+    <div class="col">
+      <div class="card" style="margin-top: 5rem;">
+          <img src="/images/firstShirts.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Santa T-Shirt</h5>
+            <p class="card-text">Santa got a brand new bag Santa Claus Gift Christmas T-Shirt New</p>
+            <a class="readmore" href="https://www.amazon.com/Santa-brand-Claus-Gift-T-Shirt/dp/B07YP7YSF6?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1">Read more</a>
+            <p class="price">$9.60</p>
+            
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-primary addToCartBtn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                      <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+                      <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                    </svg> Add to cart
+              </button>
+          </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="col">
+        <div class="card" style="margin-top: 5rem;">
+            <img src="/images/secondshirt.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Santa T-Shirt</h5>
+              <p class="card-text">You Should See The Size Of My Sack Funny Santa Christmas T-Shirt</p>
+              <a class="readmore" href="https://www.amazon.com/Should-Funny-Santa-Christmas-T-Shirt/dp/B0BJBQ4S6Y/ref=pd_day0_d_sccl_2_7/138-2432100-4195062?pd_rd_w=pyVfH&content-id=amzn1.sym.13c41fb6-7c5d-4116-b4fd-e24c25b3f69a&pf_rd_p=13c41fb6-7c5d-4116-b4fd-e24c25b3f69a&pf_rd_r=RTKEGCF92SDV6B3FNDJH&pd_rd_wg=4ibJr&pd_rd_r=c27d0ee1-0c59-4292-bad4-a2caf313762d&pd_rd_i=B0BJBQ4S6Y&psc=1">Read more</a>
+              <p class="price">$5.60</p>
+              
+              <div class="d-flex justify-content-center">
+                <button class="btn btn-primary addToCartBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                      </svg> Add to cart
+                </button>
+            </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="card" style="margin-top: 5rem;">
+              <img src="/images/thirdshirts.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Arvilhill T-Shirt</h5>
+                <p class="card-text">Men's Christmas T-Shirt Novelty Xmas Short Sleeve Shirts</p>
+                <a class="readmore" href="https://www.amazon.com/dp/B0DKMWQ88G/ref=sspa_dk_detail_1?psc=1&pd_rd_i=B0DKMWQ88G&pd_rd_w=U7sfQ&content-id=amzn1.sym.c4606765-78ec-444e-9319-716ceb6c5a61&pf_rd_p=c4606765-78ec-444e-9319-716ceb6c5a61&pf_rd_r=PZFJYGHC40Y123ADXNSH&pd_rd_wg=NhQ4b&pd_rd_r=7323f878-5425-48b0-b6cc-adf1ca78d8cf&s=apparel&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM">Read more</a>
+                <p class="price">$7.60</p>
+                
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-primary addToCartBtn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                          <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+                          <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                        </svg> Add to cart
+                  </button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="card" style="margin-top: 5rem;">
+                <img src="/images/fourthshirt.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Arvlhill T-Shirt</h5>
+                  <p class="card-text">Bruh Christmas Boys Teens Xmas Merry Christmas T-Shirt</p>
+                  <a class="readmore" href="https://www.amazon.com/dp/B0DLSVJF66/ref=sspa_dk_detail_9?pf_rd_p=c4606765-78ec-444e-9319-716ceb6c5a61&pf_rd_r=XCQFNDGYZ7XYDXFRKCT4&pd_rd_wg=mqx53&pd_rd_w=Q8taR&content-id=amzn1.sym.c4606765-78ec-444e-9319-716ceb6c5a61&pd_rd_r=0ba9f7de-5284-4ad9-a468-e7f06fc00000&s=apparel&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1">Read more</a>
+                  <p class="price">$4.60</p>
+                  
+                  <div class="d-flex justify-content-center">
+                    <button class="btn btn-primary addToCartBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                            <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+                            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                          </svg> Add to cart
+                    </button>
+                </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col">
+              <div class="card" style="margin-top: 5rem;">
+                  <img src="/images/6shirtreal.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">N-M T-Shirt</h5>
+                    <p class="card-text">The Nightmare Before Christmas High Jack Worst Nightmare T-Shirt</p>
+                    <a class="readmore" href="https://www.amazon.com/dp/B07P77Z7HC/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B07P77Z7HC&pd_rd_w=JzGdW&content-id=amzn1.sym.e1bd46f6-106d-4001-8a1f-c5226d6c67ac&pf_rd_p=e1bd46f6-106d-4001-8a1f-c5226d6c67ac&pf_rd_r=EYNDMFA9V33BDM44ACH7&pd_rd_wg=Oj8wR&pd_rd_r=8e8e03ae-21b7-49b1-8195-9cda1782f029&s=apparel&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM">Read more</a>
+                    <p class="price">$4.60</p>
+                    
+                    <div class="d-flex justify-content-center">
+                      <button class="btn btn-primary addToCartBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                              <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+                              <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                            </svg> Add to cart
+                      </button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col">
+                <div class="card" style="margin-top: 5rem;">
+                    <img src="/images/7shirt.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">D T-Shirt</h5>
+                      <p class="card-text">Disney The Nightmare Before Christmas Stars Family T-Shirt</p>
+                      <a class="readmore" href="https://www.amazon.com/STAR-WARS-Emperor-Longsleeve-T-Shirt/dp/B08KGVNTLW/ref=outlet_cn_d_d_sccl_2_7/138-2432100-4195062?pd_rd_w=C9a6r&content-id=amzn1.sym.be8a5a3a-ab0a-4357-8e05-29b4e2abad34&pf_rd_p=be8a5a3a-ab0a-4357-8e05-29b4e2abad34&pf_rd_r=QPH7X257VNE9K5F9GTT1&pd_rd_wg=Nvcme&pd_rd_r=3a154585-09a3-4e03-8c9d-8f37028afdde&pd_rd_i=B08KGVNTLW&psc=1">Read more</a>
+                      <p class="price">$4.60</p>
+                      
+                      <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary addToCartBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                              </svg> Add to cart
+                        </button>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col">
+                  <div class="card" style="margin-top: 5rem;">
+                      <img src="/images/8shirt.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">D T-Shirt</h5>
+                        <p class="card-text">Disney The Nightmare Before Christmas Christmas Sweater T-Shirt</p>
+                        <a class="readmore" href="https://www.amazon.com/dp/B0B9V6B321/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0B9V6B321&pd_rd_w=3yg3n&content-id=amzn1.sym.e1bd46f6-106d-4001-8a1f-c5226d6c67ac&pf_rd_p=e1bd46f6-106d-4001-8a1f-c5226d6c67ac&pf_rd_r=DVS1HV4ERW3KGTSVX5X7&pd_rd_wg=kG3Z2&pd_rd_r=d10d1d0a-17e6-4823-bcb9-66e1005a89e8&s=apparel&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM">Read more</a>
+                        <p class="price">$4.60</p>
+                        
+                        <div class="d-flex justify-content-center">
+                          <button class="btn btn-primary addToCartBtn">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                  <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+                                  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                </svg> Add to cart
+                          </button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col">
+                    <div class="card" style="margin-top: 5rem;">
+                        <img src="/images/8tshirts.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">D T-Shirt</h5>
+                          <p class="card-text">Disney Nightmare Before Christmas Jack Scary Teddy T-Shirt T-Shirt</p>
+                          <a class="readmore" href="https://www.amazon.com/dp/B0B9V6B321/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0B9V6B321&pd_rd_w=3yg3n&content-id=amzn1.sym.e1bd46f6-106d-4001-8a1f-c5226d6c67ac&pf_rd_p=e1bd46f6-106d-4001-8a1f-c5226d6c67ac&pf_rd_r=DVS1HV4ERW3KGTSVX5X7&pd_rd_wg=kG3Z2&pd_rd_r=d10d1d0a-17e6-4823-bcb9-66e1005a89e8&s=apparel&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM">Read more</a>
+                          <p class="price">$4.60</p>
+                          
+                          <div class="d-flex justify-content-center">
+                            <button class="btn btn-primary addToCartBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                    <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                  </svg> Add to cart
+                            </button>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+      </div>
+    </div>
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+<script>
+
+    const translations = {
+        en: {
+          home: "Home",
+          contact: "Contact",
+        },
+        zh: {
+          home: "主页",      // "Home" in Chinese
+          contact: "联系",   // "Contact" in Chinese
+        }
+      };
+    
+      // Function to set language based on selection
+      function setLanguage(language) {
+        // Update page content based on selected language
+        document.getElementById('home-link').textContent = translations[language].home;
+        document.getElementById('contact-link').textContent = translations[language].contact;
+      }
+    
+    
+      document.addEventListener('DOMContentLoaded', function() {
+      const addToCartButtons = document.querySelectorAll('.addToCartBtn');
+    
+      addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const card = button.closest('.card');
+          const itemTitle = card.querySelector('.card-title').innerText;
+          const itemPrice = card.querySelector('.card-text').nextElementSibling.innerText;
+          const itemImage = card.querySelector('.card-img-top').src;
+    
+          // Show SweetAlert confirmation dialog
+          Swal.fire({
+            title: 'Add to Cart',
+            text: 'Are you sure you want to add this item to your cart?',
+            icon: 'question',
+            iconColor: '#4CAF50', // Green color for question icon
+            width: '400px', // Set the width of the alert
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Confirm',
+            cancelButtonText: 'Cancel',
+            reverseButtons: true // Cancel button on the left, confirm on the right
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Add item to cart if confirmed
+              const cartItem = {
+                title: itemTitle,
+                price: itemPrice,
+                image: itemImage
+              };
+    
+              // Retrieve existing cart items from localStorage or initialize an empty array
+              let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+              cartItems.push(cartItem); // Add the item to the cart
+    
+              // Update localStorage with the new cart items array
+              localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    
+              // Show success message after adding the item
+              Swal.fire({
+                title: 'Added!',
+                text: 'The item has been added to your cart.',
+                icon: 'success',
+                iconColor: '#28a745', // Green color for success check icon
+                width: '400px',
+                confirmButtonColor: '#3085d6'
+              });
+            }
+          });
+        });
+      });
+    });
+
+    </script>
